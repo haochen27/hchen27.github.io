@@ -1,0 +1,81 @@
+name: Build and deploy site
+
+on:
+  # Deploy every push to `main`.
+  push:
+    branches: ["main"]
+  # Build (without deploying) pull requests, to catch errors before merging.
+  pull_request:
+  # Allow manual runs from the Actions tab.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # Pinned to the version the Wowchemy v5 theme modules are tested with.
+  HUGO_VERSION: "0.119.0"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          # Fetch history for Hugo's .GitInfo and .Lastmod
+          fetch-depth: 0
+
+      # Hugo Modules (the theme) are fetched with Go.
+      - name: Setup Go
+        uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Configure GitHub Pages
+        id: pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v6
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+        # On pull requests BASE_URL is empty, so the baseURL from config.yaml is used.
+        run: hugo --gc --minify ${BASE_URL:+--baseURL "$BASE_URL/"}
+
+      - name: Upload site artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

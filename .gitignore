@@ -1,5 +1,8 @@
-# IDEs
+# IDEs / OS
 .idea/
+.vscode/
+.DS_Store
+Thumbs.db
 
 # Hugo
 resources/

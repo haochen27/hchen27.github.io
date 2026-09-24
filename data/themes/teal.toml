@@ -1,0 +1,26 @@
+# Custom color theme matching the "HC" monogram (#336667).
+# Selected via `appearance.theme_day` / `theme_night` in config/_default/params.yaml.
+# Based on the built-in "minimal" theme.
+
+name = "Teal"
+
+[light]
+  # Primary (≈6.5:1 contrast on white)
+  primary = "#336667"
+
+  # Menu
+  menu_primary = "#fff"
+  menu_text = "#34495e"
+  menu_text_active = "#336667"
+  menu_title = "#2b2b2b"
+
+  # Home sections
+  home_section_odd = "rgb(255, 255, 255)"
+  home_section_even = "rgb(247, 247, 247)"
+
+[dark]
+  # Primary
+  primary = "#8fc7c4"
+
+  link = "#8fc7c4"
+  link_hover = "#b5dbd9"
