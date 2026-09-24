@@ -71,7 +71,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/haochen27/hchen27.github.io'
+    url: 'https://github.com/haochen27/haochen27.github.io'
     content_dir: content
     branch: main
   avatar:

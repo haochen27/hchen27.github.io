@@ -1,12 +1,11 @@
 name: Build and deploy site
 
 on:
-  # Deploy every push to `main`.
   push:
     branches: ["main"]
   # Build (without deploying) pull requests, to catch errors before merging.
   pull_request:
-  # Allow manual runs from the Actions tab.
+  # Run by hand from the Actions tab.
   workflow_dispatch:
 
 permissions:
@@ -23,7 +22,18 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ steps.publish.outputs.enabled }}
     steps:
+      # Publishing is manual for now: the site is deployed only when this workflow
+      # is run by hand on `main` (Actions → Build and deploy site → Run workflow).
+      # Every other run only builds the site as a check.
+      # To publish automatically on every push to `main`, change
+      # `github.event_name == 'workflow_dispatch'` to `github.event_name != 'pull_request'`.
+      - name: Decide whether to publish
+        id: publish
+        run: echo "enabled=${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' }}" >> "$GITHUB_OUTPUT"
+
       - name: Checkout
         uses: actions/checkout@v7
         with:
@@ -45,7 +55,7 @@ jobs:
 
       - name: Configure GitHub Pages
         id: pages
-        if: github.event_name != 'pull_request'
+        if: steps.publish.outputs.enabled == 'true'
         uses: actions/configure-pages@v6
 
       - name: Build with Hugo
@@ -53,17 +63,17 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
           BASE_URL: ${{ steps.pages.outputs.base_url }}
-        # On pull requests BASE_URL is empty, so the baseURL from config.yaml is used.
+        # When not publishing, BASE_URL is empty and the baseURL from config.yaml is used.
         run: hugo --gc --minify ${BASE_URL:+--baseURL "$BASE_URL/"}
 
       - name: Upload site artifact
-        if: github.event_name != 'pull_request'
+        if: steps.publish.outputs.enabled == 'true'
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: needs.build.outputs.publish == 'true'
     needs: build
     runs-on: ubuntu-latest
     permissions:

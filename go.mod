@@ -1,4 +1,4 @@
-module github.com/haochen27/hchen27.github.io
+module github.com/haochen27/haochen27.github.io
 
 go 1.15
 

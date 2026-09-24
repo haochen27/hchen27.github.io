@@ -19,6 +19,7 @@ GitHub Pages by GitHub Actions. It replaces my old Notre Dame WordPress site
 | Favicon | `assets/media/icon.png` |
 | Publications | `content/publication/<slug>/index.md` (+ `cite.bib`) |
 | CV (PDF) | `static/uploads/resume.pdf` |
+| Gallery photos (captions in `content/_index.md` → `gallery_item`) | `assets/media/albums/gallery/` |
 
 ## Adding content
 
@@ -35,7 +36,7 @@ In a publication's front matter, list yourself as `admin` in `authors` so your n
 highlighted and linked to your profile. Put a `featured.jpg`/`featured.png` in the page's
 folder to give it a thumbnail.
 
-Posts, projects, talks, experience and gallery sections are already written in
+Posts, projects and talks sections are already written in
 `content/_index.md` but commented out. Uncomment a section once you have content for it,
 and uncomment its link in `config/_default/menus.yaml`.
 
@@ -59,14 +60,22 @@ releases may fail to build it. Keep the Hugo version in sync with
 
 ## Deployment
 
-Every push to `main` builds the site and publishes it with GitHub Pages
-(`.github/workflows/deploy.yaml`). Pull requests are built but not deployed, so build errors
-show up before merging.
+The site is served at <https://haochen27.github.io/> by GitHub Pages, built by
+`.github/workflows/deploy.yaml`.
 
-One-time setup: in the repository's **Settings → Pages**, set **Source** to **GitHub Actions**.
+**Publishing is manual for now.** Pushes to `main` and pull requests only build the site
+(to catch errors). To publish, open **Actions → Build and deploy site → Run workflow** on
+`main`. To publish automatically on every push to `main` instead, follow the comment in
+the workflow's "Decide whether to publish" step.
 
-The workflow sets the site's base URL from the Pages configuration, so it doesn't need to be
-edited if the repository is renamed or a custom domain is added.
+One-time setup:
+
+1. The repository must be named `haochen27.github.io` for the site to be served at the root
+   of `https://haochen27.github.io/` (**Settings → General → Repository name**).
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+
+The workflow takes the site's URL from the Pages configuration, so nothing else needs to
+change if a custom domain is added later.
 
 ## Credits
 

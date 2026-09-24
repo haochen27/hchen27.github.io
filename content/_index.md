@@ -101,15 +101,16 @@ sections:
   #     columns: '2'
   #     view: compact
 
-  # Photo gallery: add images to `assets/media/albums/gallery/` and uncomment.
-  # - block: markdown
-  #   id: gallery
-  #   content:
-  #     title: Gallery
-  #     text: |-
-  #       {{< gallery album="gallery" >}}
-  #   design:
-  #     columns: '1'
+  # Photo gallery: shows every image in `assets/media/albums/gallery/`.
+  # Captions (also used as alt text) are set in `gallery_item` at the bottom of this file.
+  - block: markdown
+    id: gallery
+    content:
+      title: Gallery
+      text: |-
+        {{< gallery album="gallery" >}}
+    design:
+      columns: '1'
 
   - block: contact
     id: contact
@@ -136,4 +137,10 @@ sections:
         provider: ''
     design:
       columns: '2'
+
+# Gallery captions: one entry per image in assets/media/albums/gallery/.
+gallery_item:
+  - album: gallery
+    image: hao-chen.webp
+    caption: Hao Chen
 ---

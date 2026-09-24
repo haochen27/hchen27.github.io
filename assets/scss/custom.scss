@@ -1,0 +1,9 @@
+// Site-specific styles, imported last by the theme.
+
+// Gallery: cap tile width and center the grid. The theme's default columns
+// (`auto-fit, minmax(300px, 1fr)`) stretch a gallery of one or two photos
+// across the full page width, cropping them into a thin strip.
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  justify-content: center;
+}

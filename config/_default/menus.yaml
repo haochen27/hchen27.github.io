@@ -23,6 +23,9 @@ main:
   # - name: Talks
   #   url: '#talks'
   #   weight: 50
+  - name: Gallery
+    url: '#gallery'
+    weight: 55
   - name: Contact
     url: '#contact'
     weight: 60
