@@ -12,6 +12,7 @@ GitHub Pages by GitHub Actions. It replaces my old Notre Dame WordPress site
 | Name, role, bio, interests, education, social links | `content/authors/admin/_index.md` |
 | Profile photo | `content/authors/admin/avatar.jpg` |
 | Homepage sections (order, which are shown) | `content/_index.md` |
+| News items | `content/_index.md` (News section) |
 | Navigation bar | `config/_default/menus.yaml` |
 | Site title, URL | `config/_default/config.yaml` |
 | SEO description, colors, footer, features | `config/_default/params.yaml` |

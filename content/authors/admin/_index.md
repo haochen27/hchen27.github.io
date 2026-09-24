@@ -72,3 +72,5 @@ highlight_name: true
 I am a Ph.D. candidate in Electrical Engineering at the University of Notre Dame, advised by Professor Scott Howard, specializing in **optics, computational imaging, image restoration, and inverse problems**. My research integrates **physics-based optical and sensor modeling** with **deep generative inference** to solve inverse problems such as **denoising, deblurring, and super-resolution** under real-world degradations, including mixed Poisson–Gaussian noise and photon-limited sensing. I develop systems and algorithms for image reconstruction and enhancement, with evaluation guided by perceptual image quality metrics. My work aims to bridge computational imaging, computer vision, and perception to enable photorealistic synthesis and reliable visual understanding under real-world constraints.
 
 In Fall 2025, I was named a Notre Dame SAI (Scientific Artificial Intelligence) Fellow.
+
+**I'm on the job market for research scientist roles in computational imaging and generative modeling starting 2027.**

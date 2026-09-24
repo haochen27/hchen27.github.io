@@ -16,6 +16,21 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
 
+  # News: add new items at the top and keep the list short (drop the oldest).
+  - block: markdown
+    id: news
+    content:
+      title: News
+      text: |-
+        - **Sep 2026** — [DAPS++](publication/daps-plus-plus/) appears at ECCV 2026 in Malmö, Sweden.
+        - **Aug 2026** — Our [review on FLIM for the peritumor microenvironment](publication/flim-peritumor-review/) is published in *Cellular and Molecular Bioengineering*.
+        - **Jun 2026** — New preprint: [Improving Richardson–Lucy deconvolution with diffusion priors](publication/richardson-lucy-diffusion/).
+        - **Apr 2026** — Our [instant FLIM paper](publication/instant-flim-stromal-cells/) (co-first author) is published in *iScience*.
+        - **Fall 2025** — Named a Notre Dame SAI (Scientific Artificial Intelligence) Fellow.
+        - **Jun 2025** — [Zero-shot FLIM denoising](publication/zero-shot-flim-denoising/) appears at CVPR 2025 Workshops.
+    design:
+      columns: '2'
+
   - block: experience
     id: experience
     content:
