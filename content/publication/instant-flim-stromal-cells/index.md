@@ -11,6 +11,11 @@ authors:
   - Scott Howard
   - Meenal Datta
 
+# Notes shown next to the first N authors, in order.
+author_notes:
+  - 'Equal contribution'
+  - 'Equal contribution'
+
 date: '2026-04-28'
 doi: '10.1016/j.isci.2026.115931'
 

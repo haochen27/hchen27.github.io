@@ -10,7 +10,7 @@ last_name: Chen
 superuser: true
 
 # Role/position/tagline
-role: Ph.D. Student in Electrical Engineering
+role: Ph.D. Candidate in Electrical Engineering
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -18,29 +18,28 @@ organizations:
     url: https://www.nd.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Ph.D. student at the University of Notre Dame working on optimization methods and optical imaging.
+bio: Ph.D. candidate at the University of Notre Dame working on computational imaging, image restoration, and inverse problems.
 
 # Interests to show in About widget
 interests:
-  - Optimization & Inverse Problems
-  - Optical Imaging & Frequency-Domain Optics
+  - Computational Imaging
+  - Image Restoration & Inverse Problems
+  - Diffusion Models & Generative Inference
+  - Physics-Based Optical & Sensor Modeling
   - Fluorescence Lifetime Imaging Microscopy (FLIM)
-  - Machine Learning for Scientific Imaging
-  - Signal Processing
 
 # Education to show in About widget
-#   Add earlier degrees below the Ph.D. entry, most recent first.
 education:
   courses:
     - course: Ph.D. in Electrical Engineering
       institution: University of Notre Dame
-      year: Present
-    # - course: M.S. in ...
-    #   institution: ...
-    #   year: 20XX
-    # - course: B.S. in ...
-    #   institution: ...
-    #   year: 20XX
+      year: 2027 (expected)
+    - course: M.S. in Electrical Engineering
+      institution: University of Notre Dame
+      year: 2025
+    - course: B.E. in Electrical Engineering (with Honors)
+      institution: Wuhan University
+      year: 2021
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -70,4 +69,6 @@ email: ''
 highlight_name: true
 ---
 
-I am a Ph.D. student in Electrical Engineering at the University of Notre Dame, working under the guidance of Professor Scott Howard. My research centers on optimization methods and optical imaging. I focus on statistical modeling and experimental studies in frequency-domain optics and fluorescence lifetime imaging microscopy (FLIM) under challenging noise environments, particularly those involving mixed Poisson–Gaussian noise. I am also deeply interested in applying modern machine learning and generative models to optimization and inverse problems in scientific imaging.
+I am a Ph.D. candidate in Electrical Engineering at the University of Notre Dame, advised by Professor Scott Howard, specializing in **optics, computational imaging, image restoration, and inverse problems**. My research integrates **physics-based optical and sensor modeling** with **deep generative inference** to solve inverse problems such as **denoising, deblurring, and super-resolution** under real-world degradations, including mixed Poisson–Gaussian noise and photon-limited sensing. I develop systems and algorithms for image reconstruction and enhancement, with evaluation guided by perceptual image quality metrics. My work aims to bridge computational imaging, computer vision, and perception to enable photorealistic synthesis and reliable visual understanding under real-world constraints.
+
+In Fall 2025, I was named a Notre Dame SAI (Scientific Artificial Intelligence) Fellow.

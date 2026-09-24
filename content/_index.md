@@ -16,23 +16,38 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
 
-  # - block: experience
-  #   id: experience
-  #   content:
-  #     title: Experience
-  #     date_format: Jan 2006
-  #     # Required fields are `title`, `company`, and `date_start`.
-  #     # Leave `date_end` empty for a current position.
-  #     items:
-  #       - title: Graduate Research Assistant
-  #         company: University of Notre Dame
-  #         company_url: 'https://www.nd.edu/'
-  #         location: Notre Dame, IN
-  #         date_start: '20XX-08-01'
-  #         date_end: ''
-  #         description: ''
-  #   design:
-  #     columns: '2'
+  - block: experience
+    id: experience
+    content:
+      title: Experience
+      date_format: Jan 2006
+      # Required fields are `title`, `company`, and `date_start`.
+      # Leave `date_end` empty for a current position.
+      items:
+        - title: Graduate Research Assistant
+          company: University of Notre Dame
+          company_url: 'https://www.nd.edu/'
+          location: Notre Dame, IN
+          date_start: '2022-09-01'
+          date_end: ''
+          description: |2-
+              * Developed probabilistic models for multi-channel imaging systems under mixed Poisson–Gaussian and frequency-domain noise, improving sensor calibration, noise characterization, and estimation of measurement correlations across imaging channels and ADC readout.
+              * Designed diffusion-based reconstruction frameworks that integrate learned image priors with physics-based forward models for measurement-consistent image restoration across denoising, deblurring, and super-resolution tasks.
+              * Formulated photon-limited fluorescence microscopy deconvolution methods by combining optical system modeling, sensor noise characterization, and diffusion-based inverse-problem optimization.
+              * Improved reconstruction pipelines by coupling physics-based forward models with multi-channel correlation and optical property estimation under realistic noise modeling, increasing reconstruction accuracy.
+              * Built simulation and evaluation pipelines that combine optical physics and machine learning to analyze reconstruction accuracy, perceptual realism, and failure modes under realistic imaging degradations.
+              * Collaborated with interdisciplinary teams to connect physics-based modeling, probabilistic inference, and computational imaging for biomedical imaging applications in microscopy and FD-NIRS.
+        - title: DevOps Engineer Intern, AI Technologies
+          company: SAP
+          company_url: 'https://www.sap.com/'
+          location: Shanghai, China
+          date_start: '2021-02-01'
+          date_end: '2021-06-30'
+          description: |2-
+              * Engineered scalable ML infrastructure on Azure Kubernetes, improving development efficiency and system reliability for model deployment.
+              * Implemented observability pipelines (Prometheus, Grafana, Jaeger) to monitor system performance and diagnose latency bottlenecks in distributed environments.
+    design:
+      columns: '2'
 
   - block: collection
     id: publications

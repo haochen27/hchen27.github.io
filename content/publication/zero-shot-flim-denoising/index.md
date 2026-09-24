@@ -16,7 +16,7 @@ doi: ''
 # Publication type (CSL): paper-conference, article-journal, article (preprint), thesis, ...
 publication_types: ['paper-conference']
 
-publication: In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops*, pp. 4758–4767
+publication: In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops*, pp. 4719–4728
 publication_short: In *CVPRW 2025*
 
 # Paste the official abstract here to show it on the publication page.
