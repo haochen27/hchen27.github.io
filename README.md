@@ -19,7 +19,7 @@ GitHub Pages by GitHub Actions. It replaces my old Notre Dame WordPress site
 | Favicon | `assets/media/icon.png` |
 | Publications | `content/publication/<slug>/index.md` (+ `cite.bib`) |
 | CV (PDF) | `static/uploads/resume.pdf` |
-| Gallery photos (captions in `content/_index.md` → `gallery_item`) | `assets/media/albums/gallery/` |
+| Gallery photos | `assets/media/albums/gallery/` |
 
 ## Adding content
 
@@ -36,7 +36,7 @@ In a publication's front matter, list yourself as `admin` in `authors` so your n
 highlighted and linked to your profile. Put a `featured.jpg`/`featured.png` in the page's
 folder to give it a thumbnail.
 
-Posts, projects and talks sections are already written in
+Posts, projects, talks and gallery sections are already written in
 `content/_index.md` but commented out. Uncomment a section once you have content for it,
 and uncomment its link in `config/_default/menus.yaml`.
 

@@ -31,12 +31,9 @@ sections:
           date_start: '2022-09-01'
           date_end: ''
           description: |2-
-              * Developed probabilistic models for multi-channel imaging systems under mixed Poisson–Gaussian and frequency-domain noise, improving sensor calibration, noise characterization, and estimation of measurement correlations across imaging channels and ADC readout.
-              * Designed diffusion-based reconstruction frameworks that integrate learned image priors with physics-based forward models for measurement-consistent image restoration across denoising, deblurring, and super-resolution tasks.
-              * Formulated photon-limited fluorescence microscopy deconvolution methods by combining optical system modeling, sensor noise characterization, and diffusion-based inverse-problem optimization.
-              * Improved reconstruction pipelines by coupling physics-based forward models with multi-channel correlation and optical property estimation under realistic noise modeling, increasing reconstruction accuracy.
-              * Built simulation and evaluation pipelines that combine optical physics and machine learning to analyze reconstruction accuracy, perceptual realism, and failure modes under realistic imaging degradations.
-              * Collaborated with interdisciplinary teams to connect physics-based modeling, probabilistic inference, and computational imaging for biomedical imaging applications in microscopy and FD-NIRS.
+              * Developed probabilistic noise models (mixed Poisson–Gaussian, frequency-domain) for multi-channel imaging systems, improving sensor calibration and noise characterization.
+              * Designed diffusion-based reconstruction methods that combine learned image priors with physics-based forward models for denoising, deblurring, super-resolution, and photon-limited microscopy deconvolution.
+              * Built simulation and evaluation pipelines, and collaborated with interdisciplinary teams on biomedical imaging in microscopy and FD-NIRS.
         - title: DevOps Engineer Intern, AI Technologies
           company: SAP
           company_url: 'https://www.sap.com/'
@@ -44,8 +41,7 @@ sections:
           date_start: '2021-02-01'
           date_end: '2021-06-30'
           description: |2-
-              * Engineered scalable ML infrastructure on Azure Kubernetes, improving development efficiency and system reliability for model deployment.
-              * Implemented observability pipelines (Prometheus, Grafana, Jaeger) to monitor system performance and diagnose latency bottlenecks in distributed environments.
+              * Built ML deployment infrastructure on Azure Kubernetes with observability pipelines (Prometheus, Grafana, Jaeger) for performance monitoring.
     design:
       columns: '2'
 
@@ -101,16 +97,21 @@ sections:
   #     columns: '2'
   #     view: compact
 
-  # Photo gallery: shows every image in `assets/media/albums/gallery/`.
-  # Captions (also used as alt text) are set in `gallery_item` at the bottom of this file.
-  - block: markdown
-    id: gallery
-    content:
-      title: Gallery
-      text: |-
-        {{< gallery album="gallery" >}}
-    design:
-      columns: '1'
+  # Photo gallery: add images to `assets/media/albums/gallery/` and uncomment.
+  # Optional captions (also used as alt text) go in a `gallery_item` list in this
+  # front matter, e.g.:
+  #   gallery_item:
+  #     - album: gallery
+  #       image: my-photo.jpg
+  #       caption: Conference talk, 2026
+  # - block: markdown
+  #   id: gallery
+  #   content:
+  #     title: Gallery
+  #     text: |-
+  #       {{< gallery album="gallery" >}}
+  #   design:
+  #     columns: '1'
 
   - block: contact
     id: contact
@@ -137,10 +138,4 @@ sections:
         provider: ''
     design:
       columns: '2'
-
-# Gallery captions: one entry per image in assets/media/albums/gallery/.
-gallery_item:
-  - album: gallery
-    image: hao-chen.webp
-    caption: Hao Chen
 ---
